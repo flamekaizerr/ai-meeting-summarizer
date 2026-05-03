@@ -1,0 +1,17 @@
+.env
+.env.local
+.env.*.local
+.venv/
+__pycache__/
+*.py[cod]
+meeting_summarizer.db
+storage/
+node_modules/
+dist/
+.vite/
+*.mp3
+*.wav
+*.m4a
+*.ogg
+*.webm
+*.mp4
