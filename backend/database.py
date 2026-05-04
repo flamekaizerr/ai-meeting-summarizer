@@ -6,7 +6,12 @@ from config import settings
 
 connect_args = {"check_same_thread": False} if settings.database_url.startswith("sqlite") else {}
 
-engine = create_engine(settings.database_url, connect_args=connect_args)
+# SQLAlchemy 2.0 with psycopg3 requires postgresql+psycopg schema
+db_url = settings.database_url
+if db_url.startswith("postgres://") or db_url.startswith("postgresql://"):
+    db_url = db_url.replace("postgres://", "postgresql+psycopg://").replace("postgresql://", "postgresql+psycopg://")
+
+engine = create_engine(db_url, connect_args=connect_args)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
