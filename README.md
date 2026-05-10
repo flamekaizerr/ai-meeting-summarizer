@@ -64,7 +64,7 @@ Backend host variables:
 
 ```env
 DATABASE_URL=postgresql+psycopg://...
-CORS_ORIGINS=["https://your-vercel-app.vercel.app","http://localhost:5173"]
+CORS_ORIGINS=["https://ai-meeting-summarizer-blush.vercel.app","http://localhost:5173"]
 MAX_UPLOAD_SIZE_MB=25
 ALLOWED_AUDIO_EXTENSIONS=[".mp3",".wav",".m4a",".ogg",".webm",".mp4"]
 STORAGE_BACKEND=supabase
